@@ -195,7 +195,7 @@ interface IDBUtils {
                     val mmr = MediaMetadataRetriever()
                     mmr.setDataSource(path)
                     width = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH)?.toInt() ?: 0
-                    height = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH)?.toInt() ?: 0
+                    height = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT)?.toInt() ?: 0
                     orientation = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION)?.toInt()
                         ?: orientation
                     if (isAboveAndroidQ) mmr.close() else mmr.release()
