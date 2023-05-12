@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:photo_manager/photo_manager.dart';
+import 'package:photo_manager_example/page/developer/android/column_names_page.dart';
+import 'package:photo_manager_example/page/developer/custom_filter_page.dart';
 
 import '../../util/log.dart';
 import 'create_entity_by_id.dart';
@@ -35,7 +37,17 @@ class _DeveloperIndexPageState extends State<DeveloperIndexPage> {
         title: const Text('develop index'),
       ),
       body: ListView(
+        padding: const EdgeInsets.all(8.0),
         children: <Widget>[
+          ElevatedButton(
+            onPressed: () => navToWidget(const CustomFilterPage()),
+            child: const Text('Custom filter'),
+          ),
+          if (Platform.isAndroid)
+            ElevatedButton(
+              onPressed: () => navToWidget(const ColumnNamesPage()),
+              child: const Text('Android: column names'),
+            ),
           ElevatedButton(
             child: const Text('Show iOS create folder example.'),
             onPressed: () => navToWidget(const CreateFolderExample()),
@@ -90,7 +102,13 @@ class _DeveloperIndexPageState extends State<DeveloperIndexPage> {
               onPressed: _persentLimited,
               child: const Text('PresentLimited'),
             ),
-        ],
+        ]
+            .map((e) => Container(
+                  padding: const EdgeInsets.all(3.0),
+                  height: 44,
+                  child: e,
+                ))
+            .toList(),
       ),
     );
   }

@@ -4,7 +4,50 @@ that can be found in the LICENSE file. -->
 
 # CHANGELOG
 
+## 2.6.1
+
+### Improvements
+
+- Roll dependencies on Android. (#933)
+
+### Fixes
+
+- Fix filter option group. (#919)
+
+## 2.6.0
+
+### Features:
+
+- Support `CustomFilter` for more filter options. (#901)
+- Add two new static methods for `PhotoManager`:
+  - `getAssetCount` for getting assets count.
+  - `getAssetListRange` for getting assets between start and end.
+  
+## 2.5.2
+
+### Improvements
+
+- Reply errors when thumbnails are failed to load on Android. (#883)
+
+## 2.5.1+1
+
+### Fixes
+
+- Fix pending permissions request on Android. (#879)
+
+## 2.5.1
+
+### Improvements
+
+- Always declare `READ_EXTERNAL_STORAGE` permission on Android. (#874)
+- Upgrade Glide and Kotlin libraries version. (#872)
+- Avoid using file-based saving methods on Android. (#871)
+- Use `ContentUris` for retrieving Media URIs on Android. (#870)
+- Improve media subtype on iOS. (#863)
+
 ## 2.5.0
+
+### Features
 
 - Support saving Live Photos on iOS and macOS. (#851)
 - Introduce `DarwinEditor` to replace `IosEditor`. (#855)
